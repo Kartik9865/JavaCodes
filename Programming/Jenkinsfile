@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your Java project from version control
-                git 'https://github.com/Kartik9865/JavaCodes.git'
+                git branch: 'main', url:'https://github.com/Kartik9865/JavaCodes.git'
             }
         }
         stage('Compile') {
