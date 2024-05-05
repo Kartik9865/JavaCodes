@@ -1,7 +1,7 @@
 pipeline{
   agent any
     stages{
-      stage("build"){
+      stage('build'){
         steps{
              git branch:'main',  url: 'https://github.com/Kartik9865/JavaCodes.git'
         }
