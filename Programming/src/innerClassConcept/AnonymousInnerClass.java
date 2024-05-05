@@ -17,6 +17,7 @@ public class AnonymousInnerClass {
 				 System.out.println("Maa chudaa fir");
 			 }
 		 };
+		 
 		 cls.eat();
 	 }
 }
