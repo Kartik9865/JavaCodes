@@ -3,7 +3,7 @@ pipeline{
     stages{
       stage("build"){
         steps{
-          echo "running application"
+             git branch:'main',  url: 'https://github.com/Kartik9865/JavaCodes.git'
         }
       }
     }
