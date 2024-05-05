@@ -4,24 +4,21 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from the repository
+                // Checkout your Java project from version control
                 git 'https://github.com/Kartik9865/JavaCodes.git'
             }
         }
-
-        stage('Build') {
+        stage('Compile') {
             steps {
-                // Compile the Java code
-                sh 'javac -d . src/*.java'
+                // Compile your Java code
+                sh 'javac -d . *.java'
             }
         }
-
-        stage('Test') {
+        stage('Run') {
             steps {
-                // Run tests if you have any
-                sh 'java -cp .:/path/to/junit.jar org.junit.runner.JUnitCore TestClass'
+                // Run your Java project
+                sh 'java -cp . SingletonClass'
             }
         }
-
     }
 }
