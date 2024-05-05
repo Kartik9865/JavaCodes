@@ -1,10 +1,27 @@
-pipeline{
-  agent any
-    stages{
-      stage('build'){
-        steps{
-             git url: 'https://github.com/Kartik9865/JavaCodes.git',  branch:'main'
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the repository
+                git 'https://github.com/Kartik9865/JavaCodes.git'
+            }
         }
-      }
+
+        stage('Build') {
+            steps {
+                // Compile the Java code
+                sh 'javac -d . src/*.java'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run tests if you have any
+                sh 'java -cp .:/path/to/junit.jar org.junit.runner.JUnitCore TestClass'
+            }
+        }
+
     }
 }
